@@ -6,9 +6,12 @@ import {
   Stack,
   Text,
   Divider,
+  useBreakpointValue,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import type { NextPage } from "next";
 import { TravelType } from "../components/TravelType";
+import { Pagination, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -36,6 +39,8 @@ const travelOptions = {
 };
 
 const Home: NextPage = () => {
+  const isWideVersion = useBreakpointValue({ base: false, lg: true });
+
   return (
     <Flex flexDir="column">
       <Box zIndex="1" h="335px" position="relative">
@@ -73,13 +78,15 @@ const Home: NextPage = () => {
             </Text>
           </Stack>
 
-          <Image
-            src="/airplane.svg"
-            zIndex="1"
-            position="absolute"
-            right="32px"
-            bottom="-30px"
-          />
+          {isWideVersion && (
+            <Image
+              src="/airplane.svg"
+              zIndex="1"
+              position="absolute"
+              right="32px"
+              bottom="-30px"
+            />
+          )}
         </Flex>
       </Box>
       <Flex
@@ -91,11 +98,17 @@ const Home: NextPage = () => {
         gap="80px"
         flexDir="column"
       >
-        <Flex justify="space-between">
+        <SimpleGrid minChildWidth="100px" spacing="20px">
           {Object.entries(travelOptions).map(([key, value]) => (
-            <TravelType key={key} src={value.src} alt={value.alt} text={key} />
+            <TravelType
+              key={key}
+              src={value.src}
+              alt={value.alt}
+              text={key}
+              isWideVersion={isWideVersion}
+            />
           ))}
-        </Flex>
+        </SimpleGrid>
         <Divider size="90" bgColor="gray.900" />
         <Box textAlign="center">
           <Text color="gray.600" fontSize="36px">
@@ -105,20 +118,33 @@ const Home: NextPage = () => {
             Então escolha seu continente
           </Text>
         </Box>
-
-        <Swiper
-          spaceBetween={50}
-          slidesPerView={3}
-          onSlideChange={() => console.log("slide change")}
-          onSwiper={(swiper) => console.log(swiper)}
-        >
-          <SwiperSlide>
-            <Image src="/slider/europa.jpg" w="100%" />
-          </SwiperSlide>
-          {/* <SwiperSlide>Slide 2</SwiperSlide>
+        <Box pb="8">
+          <Swiper
+            // modules={[Navigation, Pagination]}
+            spaceBetween={50}
+            slidesPerView={1}
+            slidesPerGroup={1}
+            onSlideChange={() => console.log("slide change")}
+            onSwiper={(swiper) => console.log(swiper)}
+            onClick={() => alert("Clicado")}
+            // navigation
+            // pagination
+            // dots
+          >
+            <SwiperSlide>
+              <Image src="/slider/europa.jpg" w="100%" h={450} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image src="/slider/europa.jpg" w="100%" h={450} />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image src="/slider/europa.jpg" w="100%" h={450} />
+            </SwiperSlide>
+            {/* <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
           <SwiperSlide>Slide 4</SwiperSlide> */}
-        </Swiper>
+          </Swiper>
+        </Box>
       </Flex>
     </Flex>
   );

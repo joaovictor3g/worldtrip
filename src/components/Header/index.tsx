@@ -4,8 +4,19 @@ export function Header() {
   const { colorMode, toggleColorMode } = useColorMode();
 
   return (
-    <Flex as="header" justify="center" align="center" h={100} w="100%">
-      <Image src="/logo.svg" alt="logo" />
+    <Flex
+      as="header"
+      justify="center"
+      align="center"
+      h={{ base: 50, lg: 100 }}
+      w="100%"
+    >
+      <Image
+        src="/logo.svg"
+        alt="logo"
+        w={{ base: 81, lg: 190 }}
+        h={{ base: 20, lg: 46 }}
+      />
 
       {/* <Button
         display="flex"
