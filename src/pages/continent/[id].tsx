@@ -8,14 +8,6 @@ export default function CountryDetail() {
     <>
       <Head>
         <title>worldtrip | Europe</title>
-        <meta
-          name="description"
-          content="Application developed by João Victor"
-          key="desc"
-          property="og:description"
-        />
-        <meta property="og:title" content="worldtrip" />
-        <meta property="og:image" content="/apa.png" />
       </Head>
       <Flex flexDir="column">
         <Box w="100%" h={["150px", "500px"]} position="relative">
