@@ -20,7 +20,7 @@ const Home: NextPage = () => {
           property="og:description"
         />
         <meta property="og:title" content="worldtrip" />
-        <meta property="og:image" content="/apa.png" />
+        <meta property="og:image" content="/capa.png" />
       </Head>
       <Flex flexDir="column">
         <FlightInfoSection isWideVersion={isWideVersion} />
