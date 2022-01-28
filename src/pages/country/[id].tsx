@@ -19,7 +19,6 @@ export default function CountryDetail() {
             as="h1"
             position="absolute"
             bottom={["50%", "60px"]}
-            // transform={["translate(-50%, -50%)"]}
             fontSize={["28px", "48px"]}
             fontWeight="semibold"
           >
