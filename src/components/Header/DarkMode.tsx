@@ -12,7 +12,6 @@ export function DarkMode() {
       onClick={toggleColorMode}
       maxW={50}
       justifySelf="flex-end"
-      // variant="unstyled"
       ml="auto"
     >
       {colorMode === "light" ? (
