@@ -43,13 +43,14 @@ const Home: NextPage = () => {
 
   return (
     <Flex flexDir="column">
-      <Box zIndex="1" h="335px" position="relative">
+      <Box zIndex="1" h={["160px", "335px"]} position="relative">
         <Image
           src="/background.png"
           alt="background"
           position="absolute"
           w="100%"
           h="100%"
+          objectFit="fill"
         />
 
         <Flex
@@ -66,15 +67,15 @@ const Home: NextPage = () => {
           <Stack zIndex="1">
             <Heading
               fontWeight="medium"
-              fontSize={["2rem", "2rem", "2.25rem"]}
-              lineHeight="50px"
+              fontSize={["20px", "36px"]}
+              lineHeight={["30px", "50px"]}
             >
               5 Continentes,
               <Text>infinitas possibilidades.</Text>
             </Heading>
-            <Text>
+            <Text fontSize={["14px", "20px"]}>
               Chegou a hora de tirar do papel a viagem que você{" "}
-              <Text>sempre sonhou.</Text>
+              {isWideVersion ? <Text>sempre sonhou.</Text> : "sempre sonhou"}
             </Text>
           </Stack>
 
@@ -92,13 +93,13 @@ const Home: NextPage = () => {
       <Flex
         as="main"
         maxW={1200}
-        m="80px auto"
+        m={["20px auto", "80px auto"]}
         w="100%"
-        px="8"
-        gap="80px"
+        px={["0", "8"]}
+        gap={["20px", "80px"]}
         flexDir="column"
       >
-        <SimpleGrid minChildWidth="100px" spacing="20px">
+        <SimpleGrid minChildWidth="100px" spacing="20px" px={["8", "0"]}>
           {Object.entries(travelOptions).map(([key, value]) => (
             <TravelType
               key={key}
@@ -111,14 +112,14 @@ const Home: NextPage = () => {
         </SimpleGrid>
         <Divider size="90" bgColor="gray.900" />
         <Box textAlign="center">
-          <Text color="gray.600" fontSize="36px">
+          <Text color="gray.600" fontSize={["20px", "36px"]}>
             Vamos nessa?{" "}
           </Text>
-          <Text color="gray.600" fontSize="36px">
+          <Text color="gray.600" fontSize={["20px", "36px"]}>
             Então escolha seu continente
           </Text>
         </Box>
-        <Box pb="8">
+        <Box pb={["0", "8"]}>
           <Swiper
             // modules={[Navigation, Pagination]}
             spaceBetween={50}
@@ -132,13 +133,28 @@ const Home: NextPage = () => {
             // dots
           >
             <SwiperSlide>
-              <Image src="/slider/europa.jpg" w="100%" h={450} />
+              <Image
+                src="/slider/europa.jpg"
+                w="100%"
+                maxH={450}
+                objectFit="fill"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/slider/europa.jpg" w="100%" h={450} />
+              <Image
+                src="/slider/europa.jpg"
+                w="100%"
+                maxH={450}
+                objectFit="fill"
+              />
             </SwiperSlide>
             <SwiperSlide>
-              <Image src="/slider/europa.jpg" w="100%" h={450} />
+              <Image
+                src="/slider/europa.jpg"
+                w="100%"
+                maxH={450}
+                objectFit="fill"
+              />
             </SwiperSlide>
             {/* <SwiperSlide>Slide 2</SwiperSlide>
           <SwiperSlide>Slide 3</SwiperSlide>
