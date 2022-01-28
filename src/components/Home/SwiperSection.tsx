@@ -1,7 +1,10 @@
 import { Box, Image, Text } from "@chakra-ui/react";
+import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 export function SwiperSection() {
+  const { push } = useRouter();
+
   return (
     <>
       <Box textAlign="center">
@@ -15,7 +18,7 @@ export function SwiperSection() {
           slidesPerGroup={1}
           onSlideChange={() => console.log("slide change")}
           onSwiper={(swiper) => console.log(swiper)}
-          onClick={() => alert("Clicado")}
+          onClick={() => push(`/continent/europe`)}
         >
           <SwiperSlide>
             <Image
