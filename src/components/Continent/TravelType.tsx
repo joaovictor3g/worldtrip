@@ -25,7 +25,7 @@ export function TravelType({
       ) : (
         <Box borderRadius="50%" bgColor="yellow.500" w="8px" h="8px" />
       )}
-      <Text color="gray.600" fontWeight="bold" fontSize={["18px", "24px"]}>
+      <Text fontWeight="bold" fontSize={["18px", "24px"]}>
         {text}
       </Text>
     </Stack>

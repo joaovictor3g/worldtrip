@@ -15,7 +15,7 @@ export function CountryInfos({ amount, text }: ICountryInfoProps) {
       >
         {amount}
       </Text>
-      <Text fontSize={["16px", "24px"]} color="gray.700" fontWeight="semibold">
+      <Text fontSize={["16px", "24px"]} fontWeight="semibold">
         {text}
       </Text>
     </Stack>

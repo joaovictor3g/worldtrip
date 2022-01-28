@@ -1,6 +1,6 @@
 import { Box, Flex, Image, SimpleGrid, Stack, Text } from "@chakra-ui/react";
-import { CountryCard } from "../../components/CountryCard";
-import { CountryInfos } from "../../components/CountryInfos";
+import { CountryCard } from "../../components/Continent/CountryCard";
+import { CountryInfos } from "../../components/Continent/CountryInfos";
 
 export default function CountryDetail() {
   return (
@@ -14,13 +14,14 @@ export default function CountryDetail() {
           h="100%"
         />
 
-        <Box maxW="1200px" position="relative" m="0 auto" px={4}>
+        <Box maxW="1200px" position="relative" m="0 auto" px={2}>
           <Text
             as="h1"
             position="absolute"
             bottom={["50%", "60px"]}
             fontSize={["28px", "48px"]}
             fontWeight="semibold"
+            color="white"
           >
             Europa
           </Text>
@@ -32,15 +33,11 @@ export default function CountryDetail() {
         maxW="1200px"
         m={["20px auto", "80px auto"]}
         spacing={["20px", "80px"]}
-        px={4}
+        px={2}
       >
         <SimpleGrid minChildWidth="300px" columnGap="50px">
           <Box>
-            <Text
-              color="gray.700"
-              fontSize={["14px", "24px"]}
-              textAlign="justify"
-            >
+            <Text fontSize={["14px", "24px"]} textAlign="justify">
               A Europa é, por convenção, um dos seis continentes do mundo.
               Compreendendo a península ocidental da Eurásia, a Europa
               geralmente divide-se da Ásia a leste pela divisória de águas dos
@@ -56,7 +53,7 @@ export default function CountryDetail() {
         </SimpleGrid>
 
         <Stack spacing="40px">
-          <Text as="h1" color="gray.700" fontSize="36px">
+          <Text as="h1" fontSize="36px">
             Cidades +100
           </Text>
 
@@ -64,7 +61,7 @@ export default function CountryDetail() {
             h="auto"
             minChildWidth="260px"
             placeItems="center"
-            spacing="45px"
+            spacing="40px"
           >
             {Array(6)
               .fill(0)

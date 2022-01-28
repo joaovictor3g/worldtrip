@@ -20,7 +20,7 @@ export function CountryCard() {
         p="18px"
       >
         <Stack>
-          <Text as="span" fontSize="20" color="gray.700" fontWeight="semibold">
+          <Text as="span" fontSize="20" fontWeight="semibold">
             Londres
           </Text>
           <Text as="span" fontSize="14px" color="gray.400">
